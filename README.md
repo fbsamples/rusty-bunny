@@ -41,8 +41,10 @@
   - [Demo](#demo)
     - [Built With](#built-with)
   - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
+    - [Manual Setup](#manual-setup)
+    - [VSCode Dev Container Setup](#vscode-dev-container-setup)
+    - [Running](#running)
+    - [Testing](#testing)
   - [Usage](#usage)
   - [Contributing](#contributing)
   - [License](#license)
@@ -68,9 +70,13 @@ This is what `rusty-bunny` looks like in action.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running follow the simple steps under either of the following sections:
+- [Manual Setup](#manual-setup) – follow this if you prefer to install all dependencies locally.
+- [VSCode Dev Container Setup](#vscode-dev-container-setup) – follow this to run the project in an isolated development environment inside a Docker container, pre-installed with all dependencies.
 
-### Prerequisites
+### Manual Setup
+
+#### Prerequisites
 
 Make sure you have Rust installed.
 
@@ -85,7 +91,7 @@ Rocket uses the nightly version of Rust so make sure you use that. If you'd like
 rustup override set nightly
 ```
 
-### Installation
+#### Installation
 
 1. Clone the rusty-bunny
 ```sh
@@ -99,12 +105,34 @@ cargo --version
 ```sh
 cargo build
 ```
-4. Run the project
+4. Follow the instructions in the [Running](#running) section.
+
+### VSCode Dev Container Setup
+
+#### Prerequisites
+
+This requires VSCode, Docker and the Remote Development extension pack. For more details see [the official docs](https://code.visualstudio.com/docs/remote/containers#_system-requirements).
+
+#### Spinning Up The Environment
+
+- Follow [the official guide](https://code.visualstudio.com/docs/remote/containers#_quick-start-open-a-git-repository-or-github-pr-in-an-isolated-container-volume) to open this repository inside a dev container. VSCode will read the [config file](.devcontainer/devcontainer.json) provided to auto-install relevant dependencies and extensions.
+- To run terminal commands, use the [integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) functionality.
+
+### Running
+
+1. Run the project
 ```sh
 cargo run
 ```
-5. Visit [localhost:8000](http://localhost:8000/)
-6. To test a command, go to [localhost:8000/search?cmd=tw](http://localhost:8000/search?cmd=tw) and you should be redirected to Twitter
+2. Visit [localhost:8000](http://localhost:8000/)
+3. To test a command, go to [localhost:8000/search?cmd=tw](http://localhost:8000/search?cmd=tw) and you should be redirected to Twitter
+
+### Testing
+
+Run the following command
+```sh
+cargo test
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
